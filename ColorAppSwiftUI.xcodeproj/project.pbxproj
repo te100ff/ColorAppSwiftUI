@@ -11,6 +11,7 @@
 		181A8C82266A8312003E6844 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181A8C81266A8312003E6844 /* ContentView.swift */; };
 		181A8C84266A8313003E6844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181A8C83266A8313003E6844 /* Assets.xcassets */; };
 		181A8C87266A8313003E6844 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181A8C86266A8313003E6844 /* Preview Assets.xcassets */; };
+		181A8C8F266A85AF003E6844 /* ColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181A8C8E266A85AF003E6844 /* ColorSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		181A8C83266A8313003E6844 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		181A8C86266A8313003E6844 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		181A8C88266A8313003E6844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181A8C8E266A85AF003E6844 /* ColorSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				181A8C7F266A8312003E6844 /* ColorAppSwiftUIApp.swift */,
 				181A8C81266A8312003E6844 /* ContentView.swift */,
+				181A8C8E266A85AF003E6844 /* ColorSlider.swift */,
 				181A8C83266A8313003E6844 /* Assets.xcassets */,
 				181A8C88266A8313003E6844 /* Info.plist */,
 				181A8C85266A8313003E6844 /* Preview Content */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				181A8C82266A8312003E6844 /* ContentView.swift in Sources */,
+				181A8C8F266A85AF003E6844 /* ColorSlider.swift in Sources */,
 				181A8C80266A8312003E6844 /* ColorAppSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
