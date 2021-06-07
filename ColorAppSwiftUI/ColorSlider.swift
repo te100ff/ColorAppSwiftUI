@@ -17,8 +17,6 @@ struct ColorSlider: View {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 0
-        formatter.minimum = 0
-        formatter.maximum = 255
         return formatter
     }
     
@@ -28,29 +26,31 @@ struct ColorSlider: View {
                 .bold()
                 .foregroundColor(.white)
                 .frame(width: 50)
-                
+            
             Slider(value: $sliderValue, in: 0...255, step: 1)
                 .accentColor(color)
             
             TextField("", value: $sliderValue, formatter: formatter)
-            {_ in } onCommit: {
-                if 0...255 ~= sliderValue {
-                    return
-                } else {
-                    alertPresented.toggle()
-                }
-            }
                 .frame(width: 50, height: 30)
                 .background(Color(.white))
                 .multilineTextAlignment(.center)
-                .keyboardType(.decimalPad)
                 .alert(isPresented: $alertPresented)  {
                     Alert(title: Text("Wrong data"), message: Text("Enter value from 0 to 255"))
                 }
+                .onChange(of: sliderValue) { [sliderValue] newValue in
+                    if 0...255 ~= newValue {
+                        self.sliderValue = newValue
+                    } else {
+                        self.sliderValue = sliderValue
+                        alertPresented.toggle()
+                    }
+                    
+                }
+            
         }
     }
     
- 
+    
 }
 
 struct Slider_Previews: PreviewProvider {
