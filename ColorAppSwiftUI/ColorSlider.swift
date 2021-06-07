@@ -22,7 +22,7 @@ struct ColorSlider: View {
     
     var body: some View {
         HStack {
-            Text(formatter.string(from: NSNumber(value: sliderValue)) ?? "")
+            Text("\(lround(sliderValue))")
                 .bold()
                 .foregroundColor(.white)
                 .frame(width: 50)
