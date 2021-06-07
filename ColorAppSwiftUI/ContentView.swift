@@ -11,9 +11,6 @@ struct ContentView: View {
     @State private var redSliderValue = Double.random(in: 0...255)
     @State private var greenSliderValue = Double.random(in: 0...255)
     @State private var blueSliderValue = Double.random(in: 0...255)
-    @State var redTextValue = ""
-    @State var greenTextValue = ""
-    @State var blueTextValue = ""
     @State var alertPresented = false
     
     var body: some View {
@@ -34,7 +31,6 @@ struct ContentView: View {
                 ColorSlider(sliderValue: $redSliderValue, alertPresented: $alertPresented, color: .red)
                 ColorSlider(sliderValue: $greenSliderValue, alertPresented: $alertPresented, color: .green)
                 ColorSlider(sliderValue: $blueSliderValue, alertPresented: $alertPresented, color: .blue)
-                Text(redSliderValue.debugDescription)
                 Spacer()
             }
             .padding()

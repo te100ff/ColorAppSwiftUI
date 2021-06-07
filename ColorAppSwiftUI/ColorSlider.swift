@@ -10,16 +10,15 @@ import SwiftUI
 struct ColorSlider: View {
     @Binding var sliderValue: Double
     @Binding var alertPresented: Bool
-    @Binding var textValue: String
     
     let color: Color
-    //let action: () -> Void
+    
     var formatter: NumberFormatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 0
-//        formatter.maximum = 255
-//        formatter.minimum = 0
+        formatter.minimum = 0
+        formatter.maximum = 255
         return formatter
     }
     
