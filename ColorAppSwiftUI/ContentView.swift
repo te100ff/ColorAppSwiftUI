@@ -37,17 +37,6 @@ struct ContentView: View {
         }
     }
     
-    private func checkColorValue() {
-        let checkingValues = [redSliderValue, greenSliderValue, blueSliderValue]
-        for value in checkingValues {
-            if 0...255 ~= value {
-                return
-            } else {
-                alertPresented.toggle()
-            }
-        }
-    }
-    
 }
 
 
