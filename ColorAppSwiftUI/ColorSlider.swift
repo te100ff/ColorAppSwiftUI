@@ -38,7 +38,6 @@ struct ColorSlider: View {
                     return
                 } else {
                     alertPresented.toggle()
-                    sliderValue = sliderValue
                 }
             }
                 .frame(width: 50, height: 30)
