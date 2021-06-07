@@ -10,12 +10,16 @@ import SwiftUI
 struct ColorSlider: View {
     @Binding var sliderValue: Double
     @Binding var alertPresented: Bool
+    @Binding var textValue: String
     
     let color: Color
+    //let action: () -> Void
     var formatter: NumberFormatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 0
+//        formatter.maximum = 255
+//        formatter.minimum = 0
         return formatter
     }
     
@@ -28,7 +32,16 @@ struct ColorSlider: View {
                 
             Slider(value: $sliderValue, in: 0...255, step: 1)
                 .accentColor(color)
+            
             TextField("", value: $sliderValue, formatter: formatter)
+            {_ in } onCommit: {
+                if 0...255 ~= sliderValue {
+                    return
+                } else {
+                    alertPresented.toggle()
+                    sliderValue = sliderValue
+                }
+            }
                 .frame(width: 50, height: 30)
                 .background(Color(.white))
                 .multilineTextAlignment(.center)
@@ -36,16 +49,10 @@ struct ColorSlider: View {
                 .alert(isPresented: $alertPresented)  {
                     Alert(title: Text("Wrong data"), message: Text("Enter value from 0 to 255"))
                 }
-                
-                
-                
-                
         }
     }
     
-    
-    
-    
+ 
 }
 
 struct Slider_Previews: PreviewProvider {
@@ -53,7 +60,7 @@ struct Slider_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color(.systemBlue)
-            ColorSlider(sliderValue: .constant(5), color: .green)
+            ColorSlider(sliderValue: .constant(5), alertPresented: .constant(false), color: .green)
         }
     }
 }
